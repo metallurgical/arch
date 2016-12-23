@@ -150,6 +150,18 @@ class UserRepositories extends BaseAbstract {
     // by creating custom method, later on, we can call
     // this method inside `Canal` class
 }
+```
+
+4) Map the route to that controller and you're good to go. 
+
+# Supports
+
+- Well, just open an issues
+
+# Authors
+
+- [Norlihazmey](https://github.com/metallurgical) <norlihazmey89@gmail.com>
+- [Afiq Abdullah](https://github.com/AfiqAbdullah) <mohamadafiqabdullah@gmail.com>
 
 
     
