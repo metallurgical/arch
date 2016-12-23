@@ -5,8 +5,8 @@ use Illuminate\Support\ServiceProvider;
 
 class ArchServiceProvider extends ServiceProvider
 {
-    private $commandPath = 'command.bpocallaghan.';
-    private $packagePath = 'Bpocallaghan\Generators\Commands\\';
+    private $commandPath = 'command.arch.';
+    private $packagePath = 'Arch\Repositories\Commands\\';
     /**
      * Bootstrap the application events.
      *
@@ -22,10 +22,8 @@ class ArchServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
-        // merge config
-        $configPath = __DIR__ . '/config/config.php';
-        $this->mergeConfigFrom($configPath, 'generators');
+    {       
+        
         // register all the artisan commands
         $this->registerCommand('Repositories', 'publish');
         

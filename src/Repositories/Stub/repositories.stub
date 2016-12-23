@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Repositories;
+
+use Arch\Repositories\Shareables\BaseShareables as BaseAbstract;
+use {{modelName}};
+use DB;
+
+class {{DummyClass}} extends BaseAbstract {
+	
+	
+	public function __construct() {
+		// Assign to parent Model for data fetching
+		$this->model = {{modelNameInstance}}::getInstance();
+	}
+	
+
+}
