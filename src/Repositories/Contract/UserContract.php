@@ -1,6 +1,6 @@
 <?php
 
-namespace Arch\Repositories\\Contract;
+namespace Arch\Repositories\Contract;
 
 /**
  * Creating interface for UserContract
