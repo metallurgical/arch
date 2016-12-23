@@ -70,7 +70,7 @@ class Canal extends Command
 
     protected function buildClass($name) {
         $stub = $this->files->get($this->getStub());
-        return $this->replaceClass($stub, $name);
+        return $this->replaceRepoName( $stub )->replaceClass($stub, $name);
     }
 
     /**
@@ -80,10 +80,19 @@ class Canal extends Command
      * @param  string  $name
      * @return string
      */
-    protected function replaceClass($stub, $name) {
+    protected function replaceClass ($stub, $name) {
         $class = str_replace($this->getNamespace($name).'\\', '', $name);
 
         return str_replace('{{DummyClass}}', $class, $stub);
+    }
+
+    protected function replaceRepoName( &$stub) {       
+        
+        // replace model name
+        $stub = str_replace('{{repoName}}', ucfirst( 'MyRepositories' ), $stub);
+        
+
+        return $this;
     }
     
 

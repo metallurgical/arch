@@ -2,6 +2,9 @@
 
 namespace App\Canal;
 
+// Call the repositories class in here
+// for data management
+use App\Repositories\{{repoName}}; 
 use DB; // for custom database querying
 
 class {{DummyClass}} {	
