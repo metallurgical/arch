@@ -3,8 +3,8 @@
 namespace App\Repositories;
 
 use Arch\Repositories\Shareables\BaseShareables as BaseAbstract;
-use {{modelName}};
-use DB;
+use {{modelName}}; // Use the right model here
+use DB; // For custom database querying 
 
 class {{DummyClass}} extends BaseAbstract {
 	

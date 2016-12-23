@@ -2,7 +2,7 @@
 
 namespace App\Canal;
 
-use DB; // for creating custom query
+use DB; // for custom database querying
 
 class {{DummyClass}} {	
 	

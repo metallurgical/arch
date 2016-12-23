@@ -100,10 +100,10 @@ abstract class BaseShareables implements BaseInterface{
 
 		if ( $parentClass == 'BaseShareables' && $currentObj == 'BaseShareables' ) {
 
-			throw new BaseShareablesException( null, "EvoSystem Debugging Started : \n\n Method `$methodName` does not exist in class" . get_called_class() . ". \n\nEvoSystem said, do you mean any of these methods : \n\n" . $str . ". \n\nOtherwise please check your SPELLING dude!!" );
+			throw new BaseShareablesException( null, "Debugging Started : \n\n Method `$methodName` does not exist in class" . get_called_class() . ". \n\nSystem said, do you mean any of these methods : \n\n" . $str . ". \n\nOtherwise please check your SPELLING dude!!" );
 		}
 		else {
-			throw new BaseShareablesException(  null, "EvoSystem Debugging Started : \n\n Method `$methodName` does not exist in class " . get_called_class() . " and in parent class " . get_class() . ".  \n\nEvoSystem said, do you mean any of these methods in :  \n\n a) Current Class [" . get_called_class() . "] : \n\n" . $childStr . " \n\n b) Parent Class [" . get_class() . "] : \n\n " . $parentStr . "\n\nOtherwise please check your SPELLING dude!!" );
+			throw new BaseShareablesException(  null, "Debugging Started : \n\n Method `$methodName` does not exist in class " . get_called_class() . " and in parent class " . get_class() . ".  \n\nSystem said, do you mean any of these methods in :  \n\n a) Current Class [" . get_called_class() . "] : \n\n" . $childStr . " \n\n b) Parent Class [" . get_class() . "] : \n\n " . $parentStr . "\n\nOtherwise please check your SPELLING dude!!" );
 		}
 		
 	}
