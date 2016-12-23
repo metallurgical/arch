@@ -1,0 +1,12 @@
+{
+    "name": "arch/repositories",
+    "description": "Central repositories passing and receiving data between controller and model",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "metallurgical",
+            "email": "norlihazmey89@gmail.com"
+        }
+    ],
+    "require": {}
+}
