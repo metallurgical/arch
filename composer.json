@@ -11,7 +11,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Arch\\Repositories\\": "src/"
+            "Arch\\Repositories\\": "src/Repositories/"
         }
     },
     "minimum-stability": "dev"
