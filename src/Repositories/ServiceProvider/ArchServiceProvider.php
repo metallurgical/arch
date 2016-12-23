@@ -3,7 +3,7 @@
 namespace Arch\Repositories\ServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
-class RepositoriesServiceProvider extends ServiceProvider
+class ArchServiceProvider extends ServiceProvider
 {
     private $commandPath = 'command.bpocallaghan.';
     private $packagePath = 'Bpocallaghan\Generators\Commands\\';
