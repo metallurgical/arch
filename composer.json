@@ -13,7 +13,6 @@
         "psr-4": {
             "Arch\\Repositories\\": "src/Repositories/"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
 
