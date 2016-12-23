@@ -25,7 +25,8 @@ class ArchServiceProvider extends ServiceProvider
     {       
         
         // register all the artisan commands
-        $this->registerCommand('Repositories', 'publish');
+        $this->registerCommand('Repositories', 'publish');        
+        $this->registerCommand('Canal', 'publish');
         
     }
     /**
