@@ -45,5 +45,26 @@ Canal is a normal php class having all the reusable method that were created to 
     
  **CanalName** - Canal name.
  
- This command will create `Canal` file inside `App\Canal` directory on the fly. This class should contains all the reusable code. As example we have `UserModule` for simple/complex crud operation, user permission and anything else. Then, all the methods can be placed inside `UserModuleCanal`, and `UserModuleCanal` can call any of `Repositories`'s method inside of it.
+ This command will create `Canal` file inside `App\Canal` directory on the fly. This class should contains all the reusable code. As example we have `UserModule` for simple/complex crud operation, user permission and anything else. Then, all the methods can be placed inside `UserModuleCanal`, and `UserModuleCanal` can call any of `Repositories`'s method inside of it. Later on, if we have two controller for the `Web` application and `Api` stuff with the same behaviour, we can just call the `UserModuleCanal` for both `controller` as they all share the same functionality.
+ 
+## 3) Make use of traits inside Model
+
+Last, include trait `Arch\Repositories\Tools\Instantiate` inside our `Model` that tied with the `Repositories` as follow :
+
+```Php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Repositories\Tools\Instantiate;
+
+class User extends Model {
+   use Instantiate;    
+}
+```
+
+Done!
+
+    
     
