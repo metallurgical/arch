@@ -13,5 +13,6 @@
         "psr-4": {
             "Arch\\Repositories\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev-master"
 }
