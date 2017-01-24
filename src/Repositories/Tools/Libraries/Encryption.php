@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Tools\libraries;
+namespace Arch\Repositories\Tools\libraries;
 
 use Hashids\Hashids;
 use Exception;
