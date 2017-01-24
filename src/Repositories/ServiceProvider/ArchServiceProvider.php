@@ -27,6 +27,15 @@ class ArchServiceProvider extends ServiceProvider
         // register all the artisan commands
         $this->registerCommand('Repositories', 'repo');        
         $this->registerCommand('Canal', 'canal');
+        /*
+         * Register the service provider for the dependency.
+         */
+        $this->app->register( 'Arch\Repositories\ServiceProvider\ArchServiceProvider' );
+        /*
+         * Create aliases for the dependency.
+         */
+        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+        $loader->alias( 'Fence', 'Arch\Repositories\Tools\Libraries\Encryption' );
         
     }
     /**
