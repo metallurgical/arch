@@ -12,7 +12,9 @@
             "email": "mohamadafiqabdullah@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+            "hashids/hashids" : ">=2.0.3"
+        },
     "autoload": {
         "psr-4": {
             "Arch\\Repositories\\": "src/Repositories/"
