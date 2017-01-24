@@ -2,11 +2,12 @@
 
 namespace App\Repositories\Tools\libraries;
 
+use Hashids\Hashids;
 use Exception;
 
 class Encryption {
 
-	private static $salt;
+	private static $salt;	
 	/**
 	 * Using APP_KEY inside app.php
 	 */
@@ -53,6 +54,59 @@ class Encryption {
 			return false;
 		}
 		
+	}
+	/**
+	 * Encode value using Unique Identifier like Youtube
+	 * Just short look nice instead of base64
+	 * @param  [type] $toEncode [value to encode | accept only number(integer or 0, negative number cannot)]
+	 * @return [type]           [encoded uid]
+	 */
+	public static function encode ( $toEncode ) {
+
+		try {
+
+			$hash = new Hashids( self::$salt, 15 );
+			$encodedVal = $hashids->encode( $toEncode );
+			return $encodedVal;
+
+		}
+		catch ( Exception $e ) {
+			return false;
+		}
+	}
+	/**
+	 * Decode uid(s)
+	 * @param  [type] $toDecode [value to decode]
+	 * @return [type]           [decoded value]
+	 */
+	public static function decode ( $toDecode ) {
+
+		try {
+
+			$hash = new Hashids( self::$salt );
+			$decodedVal = $hashids->decode( $toDecode );
+			return $decodedVal;
+
+		}
+		catch ( Exception $e ) {
+			return false;
+		}
+	}
+	/**
+	 * Match the Uid with Hash value
+	 * @param  [type] $encodedVal [encoded value using encode function]
+	 * @param  [type] $hashVal    [hashed value]
+	 * @param  string $shaBit     [bit of sha]
+	 * @return [type]             [decoded uid]
+	 */
+	public static function match ( $encodedVal, $hashVal, $shaBit = 'sha256' ) {
+
+		$decodedVal = Encryption::decode( $encodedVal );
+		$decHashVal = hash( $shaBit, $decodedVal . self::$salt  );
+
+		if ( $decHashVal == $hashVal ) return $decodedVal;
+
+		return false;
 	}
 	/**
 	 * Static method to decrypt
