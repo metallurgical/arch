@@ -3,8 +3,8 @@
 namespace Arch\Repositories\ServiceProvider;
 
 use Arch\Repositories\Tools\Libraries\Encryption;
-use Arch\Repositories\Tools\Libraries\MultiCurl;
 use Illuminate\Support\ServiceProvider;
+use Arch\MultiCurl\MultiCurl;
 
 
 class ArchServiceProvider extends ServiceProvider

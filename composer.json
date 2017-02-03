@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-            "hashids/hashids" : ">=1.0.6"
+            "hashids/hashids" : ">=1.0.6",
+            "arch/multicurl" : ">=1.1.1"
         },
     "autoload": {
         "psr-4": {
