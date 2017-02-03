@@ -51,7 +51,7 @@ Canal is a normal php class having all the reusable method that were created to 
  
 ## 3) Make use of traits inside Model
 
-Last, include trait `Arch\Repositories\Tools\Instantiate` inside our `Model` that tied with the `Repositories` as follow :
+Last, include trait `Arch\Util\Instantiate` inside our `Model` that tied with the `Repositories` as follow :
 
 ```Php
 <?php
@@ -59,7 +59,7 @@ Last, include trait `Arch\Repositories\Tools\Instantiate` inside our `Model` tha
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Repositories\Tools\Instantiate;
+use Arch\Util\Instantiate;
 
 class User extends Model {
    use Instantiate;    

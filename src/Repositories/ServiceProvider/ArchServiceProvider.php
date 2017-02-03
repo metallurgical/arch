@@ -3,8 +3,10 @@
 namespace Arch\Repositories\ServiceProvider;
 
 use Arch\Repositories\Tools\Libraries\Encryption;
+use Arch\Repositories\Tools\Instantiate;
 use Illuminate\Support\ServiceProvider;
 use Arch\MultiCurl\MultiCurl;
+
 
 
 class ArchServiceProvider extends ServiceProvider
@@ -42,6 +44,7 @@ class ArchServiceProvider extends ServiceProvider
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
             $loader->alias( 'Arch\Libs\Fence', Encryption::class );
             $loader->alias( 'Arch\Libs\MultiCurl', MultiCurl::class );
+            $loader->alias( 'Arch\Util\Instantiate', Instantiate::class );
         });
         
     }
