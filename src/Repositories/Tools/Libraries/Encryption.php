@@ -66,7 +66,7 @@ class Encryption {
 		try {
 
 			$hash = new Hashids( self::$salt, 15 );
-			$encodedVal = $hashids->encode( $toEncode );
+			$encodedVal = $hash->encode( $toEncode );
 			return $encodedVal;
 
 		}
@@ -83,9 +83,9 @@ class Encryption {
 
 		try {
 
-			$hash = new Hashids( self::$salt );
-			$decodedVal = $hashids->decode( $toDecode );
-			return $decodedVal;
+			$hash = new Hashids( self::$salt, 15 );
+			$decodedVal = $hash->decode( $toDecode );
+			return $decodedVal[0];
 
 		}
 		catch ( Exception $e ) {

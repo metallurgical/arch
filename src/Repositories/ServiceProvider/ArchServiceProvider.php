@@ -1,7 +1,11 @@
 <?php
 
 namespace Arch\Repositories\ServiceProvider;
+
+use Arch\Repositories\Tools\Libraries\Encryption;
+use Arch\Repositories\Tools\Libraries\MultiCurl;
 use Illuminate\Support\ServiceProvider;
+
 
 class ArchServiceProvider extends ServiceProvider
 {
@@ -30,12 +34,15 @@ class ArchServiceProvider extends ServiceProvider
         /*
          * Register the service provider for the dependency.
          */
-        $this->app->register( 'Arch\Repositories\ServiceProvider\ArchServiceProvider' );
+        //$this->app->register( 'Arch\Repositories\ServiceProvider\ArchServiceProvider' );
         /*
          * Create aliases for the dependency.
          */
-        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-        $loader->alias( 'Fence', 'Arch\Repositories\Tools\Libraries\Encryption' );
+        $this->app->booting(function() {
+            $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+            $loader->alias( 'Arch\Libs\Fence', Encryption::class );
+            $loader->alias( 'Arch\Libs\MultiCurl', MultiCurl::class );
+        });
         
     }
     /**
