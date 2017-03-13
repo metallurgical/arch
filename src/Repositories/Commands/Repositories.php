@@ -36,11 +36,11 @@ class Repositories extends Command
         // assign app path
         $this->appPath = app_path();
         // get repositories path
-        $repoPath = $this->appPath . '\Repositories';
+        $repoPath = $this->appPath . '/Repositories';
         // get option for model name
         $this->modelName = $this->option( 'model' );
         // get repositories file path
-        $file = $repoPath . '\\' . $repoName . '.php';
+        $file = $repoPath . '/' . $repoName . '.php';
         // checking if file already exist or not
         if ( file_exists( $file ) ) {            
 
@@ -69,7 +69,7 @@ class Repositories extends Command
     }
 
     public function getStub() {
-        return $this->basePath.'\vendor\arch\repositories\src\Repositories\Stub\repositories.stub';
+        return $this->basePath.'/vendor/arch/repositories/src/Repositories/Stub/repositories.stub';
     }
 
     protected function buildClass($name) {

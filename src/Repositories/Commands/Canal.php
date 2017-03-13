@@ -34,9 +34,9 @@ class Canal extends Command
         // assign app path
         $this->appPath = app_path();
         // get repositories path
-        $canalPath = $this->appPath . '\Canal';
+        $canalPath = $this->appPath . '/Canal';
         // get repositories file path
-        $file = $canalPath . '\\' . $canalName . '.php';
+        $file = $canalPath . '/' . $canalName . '.php';
         // checking if file already exist or not
         if ( file_exists( $file ) ) {            
 
@@ -65,7 +65,7 @@ class Canal extends Command
     }
 
     public function getStub() {
-        return $this->basePath.'\vendor\arch\repositories\src\Repositories\Stub\canal.stub';
+        return $this->basePath.'/vendor/arch/repositories/src/Repositories/Stub/canal.stub';
     }
 
     protected function buildClass($name) {
