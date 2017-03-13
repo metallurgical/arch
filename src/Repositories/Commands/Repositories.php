@@ -92,17 +92,22 @@ class Repositories extends Command
 
     protected function replaceModelName( &$stub) {       
         
-        // replace model name
-        $stub = str_replace('{{modelName}}', ucfirst( $this->modelName ), $stub);
-        // check if model name provided using fully qualified name or not
-        if ( preg_match( "/\\\\/i", $this->modelName ) ) {
+        if ( preg_match( "/\//", $this->modelName ) )
+            $modelName = str_replace('/', '\\',$this->modelName );
+        else          
+            $modelName = $this->modelName;
 
-            $modelExplode = explode( '\\', $this->modelName );
+        // replace model name
+        $stub = str_replace('{{modelName}}', ucfirst( $modelName ), $stub);
+        // check if model name provided using fully qualified name or not
+        if ( preg_match( "/\\\\/i", $modelName ) ) {
+
+            $modelExplode = explode( '\\', $modelName );
             $modelInstance = ucfirst( $modelExplode[ count($modelExplode) - 1 ] );
 
         }
         else {
-            $modelInstance = $this->modelName;
+            $modelInstance = $modelName;
         }
 
         $stub = str_replace('{{modelNameInstance}}', ucfirst( $modelInstance ), $stub);
