@@ -154,6 +154,77 @@ class UserRepositories extends BaseAbstract {
 
 4) Map the route to that controller and you're good to go. 
 
+# Built-in Utilities/Libraries
+
+ - Encryption (Using laravel encryption and Hashids by @ivanakimov)
+ - MultiCurl
+ 
+## 1) Encryption
+
+Require the util inside controller directly after namespace keyword :
+
+`use Arch\Libs\Fence`
+
+Usage example :
+
+**a) Encrypt data**
+
+Return encrypted data
+```php
+$encrypted = Fence::encrypt( $var );
+```
+
+**b) Decrypt data**
+
+Return decrypted data
+
+```php
+$encrypted = Fence::decrypt( $var );
+```
+
+**c) Hash**
+
+Return hashed data
+
+```php
+$hashed = Fence::hash( $var );
+```
+**d) Compare**
+
+Return decrypted Data if success, otherwise false
+
+```php
+$hashed = 'KJNksdsjdhjunKLJ....';
+$encrypted = 'SDxkzjxncjn...';
+$encrypted = Fence::compare( $encrypted,$hashed );
+```
+
+**e) Encode(Hashids)**
+
+Return encrypted data
+
+```php
+$encode = Fence::encode( $var ); // produce 15 length alpha numeric characters
+```
+
+**f) Decode(Hashids)**
+
+Return decrypted data
+
+```php
+$decode = Fence::decode( $var );
+```
+
+**g) Match(Hashids)**
+
+Return decrypted Data if success, otherwise false
+
+```php
+$encode = 'KJNksdsjdhjunKLJ....';
+$hashed = 'SDxkzjxncjn...';
+$hashed = Fence::match( $encode, $hashed );
+```
+
 # Supports
 
 - Well, just open an issues
