@@ -4,7 +4,7 @@ Laravel Package for Central repositories passing and receiving data from databas
 # Package Installation
 1) Package can be installed using composer, just require it :
 
-    composer require arch/repositories
+    `composer require arch/repositories`
     
 2) After install, add `ArchServiceProvider` to provider array in `config/app.php` as follow :
 
