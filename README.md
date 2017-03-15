@@ -158,6 +158,7 @@ class UserRepositories extends BaseAbstract {
 
  - Encryption (Using laravel encryption and Hashids by @ivanakimov)
  - MultiCurl
+ - More utilities and libraries will added in future........
  
 ## 1) Encryption
 
@@ -225,9 +226,21 @@ $hashed = 'SDxkzjxncjn...';
 $hashed = Fence::match( $encode, $hashed );
 ```
 
+## 2) MultiCurl
+
+This util is same with [MultiCurl](https://github.com/metallurgical/multicurl) as this package were required its automatically at package installation using composer. Require the util inside controller directly after namespace keyword :
+
+`use Arch\Libs\MultiCurl`
+
+Usage example : Example can be found directly at [MultiCurl](https://github.com/metallurgical/multicurl). The only different is you need to require the util using `use Arch\Libs\MultiCurl` instead of individual `use Arch\MultiCurl\MultiCurl;`. But both are the same. The choices is yours.
+
 # Supports
 
 - Well, just open an issues
+
+# Contribute
+
+Feel free to fork and create PR
 
 # Authors
 
